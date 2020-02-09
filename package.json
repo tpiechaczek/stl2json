@@ -1,0 +1,59 @@
+{
+  "name": "stl2svg",
+  "version": "1.0.0",
+  "description": "Tool to convert stl files into svg files",
+  "main": "./lib/index.js",
+  "bin": {
+    "stl2svg": "lib/index.js"
+  },
+  "scripts": {
+    "prettier": "prettier --write './src/**/*.ts'",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && yarn",
+    "watch": "nodemon --watch 'src/client/**/*.ts' --exec 'ts-node' src/client/index.ts -r ./src/client/graphql-example -o",
+    "build": "rm -rf ./lib/client && tsc -p ./tsconfig.json",
+    "build-prod": "yarn build-client && yarn build-app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpiechaczek/stl2svg.git"
+  },
+  "keywords": [
+    "stl",
+    "svg",
+    "converter"
+  ],
+  "author": "tpiechaczek <tomasz.piechaczek@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tpiechaczek/stl2svg/issues"
+  },
+  "homepage": "https://github.com/tpiechaczek/stl2svg#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "chokidar": "^3.2.3",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.4",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@types/clear": "^0.1.0",
+    "@types/express": "^4.17.2",
+    "@types/figlet": "^1.2.0",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "^12.12.6",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "nodemon": "^1.19.4",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "1.17.1",
+    "ts-node": "^8.5.4"
+  }
+}
