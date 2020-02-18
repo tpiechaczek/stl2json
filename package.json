@@ -1,34 +1,33 @@
 {
-  "name": "stl2svg",
+  "name": "stl2json",
   "version": "1.0.0",
-  "description": "Tool to convert stl files into svg files",
+  "description": "Tool to convert stl files into json representation",
   "main": "./lib/index.js",
   "bin": {
-    "stl2svg": "lib/index.js"
+    "stl2json": "lib/index.js"
   },
   "scripts": {
     "prettier": "prettier --write './src/**/*.ts'",
-    "refresh": "rm -rf ./node_modules ./package-lock.json && yarn",
-    "watch": "nodemon --watch 'src/client/**/*.ts' --exec 'ts-node' src/client/index.ts -r ./src/client/graphql-example -o",
+    "refresh": "rm -rf ./node_modules ./yarn.lock && yarn",
+    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/client/index.ts -f STL_FILE_PATH -o ",
     "build": "rm -rf ./lib/client && tsc -p ./tsconfig.json",
-    "build-prod": "yarn build-client && yarn build-app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tpiechaczek/stl2svg.git"
+    "url": "git+https://github.com/tpiechaczek/stl2json.git"
   },
   "keywords": [
     "stl",
-    "svg",
+    "json",
     "converter"
   ],
   "author": "tpiechaczek <tomasz.piechaczek@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tpiechaczek/stl2svg/issues"
+    "url": "https://github.com/tpiechaczek/stl2json/issues"
   },
-  "homepage": "https://github.com/tpiechaczek/stl2svg#readme",
+  "homepage": "https://github.com/tpiechaczek/stl2json#readme",
   "dependencies": {
     "chalk": "^2.4.2",
     "chokidar": "^3.2.3",
@@ -41,7 +40,6 @@
     "typescript": "^3.7.5",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@types/clear": "^0.1.0",
-    "@types/express": "^4.17.2",
     "@types/figlet": "^1.2.0",
     "@types/minimist": "^1.2.0",
     "@types/node": "^12.12.6",
@@ -52,7 +50,6 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "nodemon": "^1.19.4",
-    "parcel-bundler": "^1.12.4",
     "prettier": "1.17.1",
     "ts-node": "^8.5.4"
   }
