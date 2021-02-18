@@ -33,7 +33,7 @@
     "chokidar": "^3.2.3",
     "clear": "^0.1.0",
     "figlet": "^1.2.4",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.3"
   },
   "devDependencies": {
     "tslint": "^6.0.0",
